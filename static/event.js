@@ -1,6 +1,6 @@
 function showTextcaption(id) {
     id.innerHTML="D'origine latine, « alias » signifie « une autre fois », « autrement »";
-    
+
 }
 
 function showTextadip(id) {
