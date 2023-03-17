@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <title>TP3-WEB</title>
+    <style>
+      li {
+        display: inline-block; 
+        margin-right: 10px;
+        color: #778899;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul style="padding:0;">
+          <li> <p> <a href="{{ url_for('home_form') }}"> Accueil! </a> </p> </li>
+          <li> <p> <a href="{{ url_for('alias_form') }}"> Alias </a> </p> </li>
+          <li> <p> <a href="{{ url_for('formulaire_nat_form') }}"> formulaire nat </a> </p> </li>
+          <li> <p> <a href="{{ url_for('regle_nat_form') }}"> regle nat </a> </p> </li>
+        </ul>
+      </nav>
+      <h1>Page d'Accueil</h1>
+        <ol> 
+            <li> <strong> Processeur : Intel(R) Core(TM) i7-10700 CPU @2.90GHZ, 2904MHz, 8coeur(s),16 processeurs</li>
+            <li> Version du BIOS/Date : Dell Inc, 1.4.2, 07/01/2022  </li>
+            <li> Mémoire physique (RAM) installée: 32.0 Go </strong> </li>
+        </ol>    
+
+    </header>
+      <footer>
+            <p> Site codé par MUSSET Eliot</p> 
+            <img src="{{url_for('static', filename='css.png')}}" />
+            <img src="{{url_for('static', filename='html5.png')}}" />
+      </footer>
+  </body>
+</html>

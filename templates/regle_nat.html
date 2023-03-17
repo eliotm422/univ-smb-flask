@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <title>TP3-WEB</title>
+    <style>
+      li {
+        display: inline-block; 
+        margin-right: 10px;
+        color: #778899;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul style="padding:0;">
+          <li> <p> <a href="{{ url_for('home_form') }}"> Accueil! </a> </p> </li>
+          <li> <p> <a href="{{ url_for('alias_form') }}"> Alias </a> </p> </li>
+          <li> <p> <a href="{{ url_for('formulaire_nat_form') }}"> formulaire nat </a> </p> </li>
+          <li> <p> <a href="{{ url_for('regle_nat_form') }}"> regle nat </a> </p> </li>
+        </ul>
+      </nav>
+    <table>
+        <caption> NAT </caption>
+        <tr> <th>srcIP</th> <th>srcPort</th><th>destIP</th><th>dest Port</th></th></tr>
+        <tr> <td>10.0.0.1 </td> <td>80</td> <td> 192.168.1.2</td><td>8080</td></tr>
+        <tr> <td>10.0.0.1 </td> <td>80</td> <td> 192.168.1.2</td><td>90000</td></tr>
+
+    </table>
+      <hr>
+    </header>
+    <article>
+      <header>
+        <p> Site codé par MUSSET Eliot</p> 
+        <img src="{{url_for('static', filename='css.png')}}" />
+        <img src="{{url_for('static', filename='html5.png')}}" />
+      </header>
+    </article>
+  </body>
+</html>
