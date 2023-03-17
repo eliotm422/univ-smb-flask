@@ -2,11 +2,21 @@
 from flask import Flask, request, url_for, redirect, render_template
 
 app = Flask(__name__)
+app.secret_key = 'username:password'
 
 @app.route("/")
 def index():
-    return render_template('home.html')
+    return render_template('login.html')
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        if username == 'username' and password == 'password':
+            return redirect(url_for('home_form'))
+        else:
+            return render_template('login.html', error='Invalid username or password')
 @app.route('/home_form', methods=['GET', 'POST'])
 def home_form():
     if request.method == 'POST':
