@@ -31,6 +31,11 @@ def alias_form():
     # show the form, it wasn't submitted
     return render_template('alias.html')
 
+#@app.route('/create_nat_form', methods=['GET', 'POST'])
+#def create():
+
+
+
 @app.route('/formulaire_nat_form', methods=['GET', 'POST'])
 def formulaire_nat_form():
     if request.method == 'POST':
@@ -38,10 +43,25 @@ def formulaire_nat_form():
 
         # redirect to end the POST handling
         # the redirect can be to the same route or somewhere else
-        return redirect(url_for('formulaire_nat'))
-
-    # show the form, it wasn't submitted
+        srcIP=request.form['srcIP']
+        srcPort=request.form['srcPort']
+        destIP=request.form['destIP'] 
+        destPort=request.form['destPort']
+        
+        if not srcIP:
+            flash('srcIP is required!')
+        elif not srcPort:
+            flash('srcPort is required!')
+        elif not destIP:
+            flash('destIP is required!')
+        elif not destPort:
+            flash('destPort is required!')
+        else:
+            #messages.append({'srcIP': srcIP, 'srcPort': srcPort, 'destIP': destIP, 'destPort': destPort,}) 
+            return render_template('regle_nat.html', variable1=srcIP, variable2=srcPort, variable3=destIP, variable4=destPort )
     return render_template('formulaire_nat.html')
+
+
 
 @app.route('/regle_nat_form', methods=['GET', 'POST'])
 def regle_nat_form():
@@ -50,8 +70,10 @@ def regle_nat_form():
 
         # redirect to end the POST handling
         # the redirect can be to the same route or somewhere else
-        return redirect(url_for('regle_nat'))
-
+        return redirect(url_for('regle_nat_form'))
+    
+    #if request.method == 'GET':
+        
     # show the form, it wasn't submitted
     return render_template('regle_nat.html')
 

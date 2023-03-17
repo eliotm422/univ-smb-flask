@@ -23,22 +23,22 @@
         </ul>
       </nav>
     <h2> Formulaire NAT </h2>
-    <form action="regle_nat.html" method="post">
+    <form action="{{url_for('formulaire_nat_form') }}" method="post">
         <div>
             <label for="srcIP">srcIP :</label>
-            <input type="text" id="srcIP" name="new_srcIP">
+            <input type="text" id="srcIP" name="srcIP">
         </div>
         <div>
                 <label for="srcPort">srcPort :</label>
-                <input type="number" id="srcPort" name="new_srcPort">
+                <input type="number" id="srcPort" name="srcPort">
         </div>
         <div>
                 <label for="destIP">destIP</label>
-                <input type="text" id="destIP" name="new_destIP">
+                <input type="text" id="destIP" name="destIP">
         </div>
         <div>
                 <label for="destPort">destPort</label>
-                <input type="number" id="destPort" name="new_destPort">
+                <input type="number" id="destPort" name="destPort">
         </div>
         <div class="button">
                 <button type="submit">Envoyer les données</button>
