@@ -47,18 +47,17 @@ def formulaire_nat_form():
         srcPort=request.form['srcPort']
         destIP=request.form['destIP'] 
         destPort=request.form['destPort']
-        
-        if not srcIP:
-            flash('srcIP is required!')
-        elif not srcPort:
-            flash('srcPort is required!')
-        elif not destIP:
-            flash('destIP is required!')
-        elif not destPort:
-            flash('destPort is required!')
-        else:
-            #messages.append({'srcIP': srcIP, 'srcPort': srcPort, 'destIP': destIP, 'destPort': destPort,}) 
-            return render_template('regle_nat.html', variable1=srcIP, variable2=srcPort, variable3=destIP, variable4=destPort )
+        return render_template('regle_nat.html', variable1=srcIP, variable2=srcPort, variable3=destIP, variable4=destPort )
+        #if not srcIP:s
+         #   flash('srcIP is required!')
+        #elif not srcPort:
+        #    flash('srcPort is required!')
+        #elif not destIP:
+        #    flash('destIP is required!')
+        #elif not destPort:
+        #    flash('destPort is required!')
+        #messages.append({'srcIP': srcIP, 'srcPort': srcPort, 'destIP': destIP, 'destPort': destPort,}) 
+       
     return render_template('formulaire_nat.html')
 
 
