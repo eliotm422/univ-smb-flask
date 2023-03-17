@@ -17,6 +17,7 @@ def login():
             return redirect(url_for('home_form'))
         else:
             return render_template('login.html', error='Invalid username or password')
+
 @app.route('/home_form', methods=['GET', 'POST'])
 def home_form():
     if request.method == 'POST':
@@ -86,6 +87,9 @@ def regle_nat_form():
     # show the form, it wasn't submitted
     return render_template('regle_nat.html')
 
+@app.route('/logout')
+def logout():
+    return render_template('login.html')
 
 if __name__ == "__main__":
     app.run(debug=False)
