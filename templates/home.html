@@ -14,20 +14,20 @@
   </head>
   <body>
     <header>
-      <nav>
+      <ul class="menu">
         <ul style="padding:0;">
-          <li> <p> <a href="{{ url_for('home_form') }}"> Accueil! </a> </p> </li>
+          <li> <p> <a href="{{ url_for('home_form') }}" class="actif" > Accueil! </a> </p> </li>
           <li> <p> <a href="{{ url_for('alias_form') }}"> Alias </a> </p> </li>
           <li> <p> <a href="{{ url_for('formulaire_nat_form') }}"> formulaire nat </a> </p> </li>
           <li> <p> <a href="{{ url_for('regle_nat_form') }}"> regle nat </a> </p> </li>
           <li> <p> <a href="{{ url_for('logout') }}"> Se déconnecter </a> </p> </li>
         </ul>
-      </nav>
-      <h1>Page d'Accueil</h1>
+      </ul>
+      <h1>Bonjour {{login}}, gloire à vous, vive l'empereur !</h1>
         <ol> 
-            <li> <strong> Processeur : Intel(R) Core(TM) i7-10700 CPU @2.90GHZ, 2904MHz, 8coeur(s),16 processeurs</li>
-            <li> Version du BIOS/Date : Dell Inc, 1.4.2, 07/01/2022  </li>
-            <li> Mémoire physique (RAM) installée: 32.0 Go </strong> </li>
+            <li> <p> Processeur : Intel(R) Core(TM) i7-10700 CPU @2.90GHZ, 2904MHz, 8coeur(s),16 processeurs <p> </p></li>
+            <li> <p> Version du BIOS/Date : Dell Inc, 1.4.2, 07/01/2022 </p> </li>
+            <li> <p> Mémoire physique (RAM) installée: 32.0 Go </p> </li> 
         </ol>    
 
     </header>

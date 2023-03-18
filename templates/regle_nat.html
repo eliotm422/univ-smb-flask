@@ -14,15 +14,15 @@
   </head>
   <body>
     <header>
-      <nav>
+      <ul class="menu">
         <ul style="padding:0;">
           <li> <p> <a href="{{ url_for('home_form') }}"> Accueil! </a> </p> </li>
           <li> <p> <a href="{{ url_for('alias_form') }}"> Alias </a> </p> </li>
           <li> <p> <a href="{{ url_for('formulaire_nat_form') }}"> formulaire nat </a> </p> </li>
-          <li> <p> <a href="{{ url_for('regle_nat_form') }}"> regle nat </a> </p> </li>
+          <li> <p> <a href="{{ url_for('regle_nat_form') }}" class="actif" > regle nat </a> </p> </li>
           <li> <p> <a href="{{ url_for('logout') }}"> Se déconnecter </a> </p> </li>
         </ul>
-      </nav>
+      </ul>
     <table>
         <caption> NAT </caption>
         <tr> <th>srcIP</th> <th>srcPort</th><th>destIP</th><th>dest Port</th></th></tr>

@@ -13,8 +13,8 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        if username == 'username' and password == 'password':
-            return redirect(url_for('home_form'))
+        if username == 'Napoleon' and password == 'Bonapart':
+            return render_template('home.html', login=username)
         else:
             return render_template('login.html', error='Invalid username or password')
 

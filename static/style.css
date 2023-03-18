@@ -1,3 +1,49 @@
+.menu {
+  display: flex;              /* Transformation en flexbox */
+  padding:0;                  /* Suppression des marges internes */
+  background-color: linear-gradient(rgb(201, 156, 214), #8553a1);    /* Ajout de la couleur d'arrière-plan */
+  justify-content: center     /* Alignements des liens dans le menu */
+}
+
+.menu li {
+  list-style-type: none ;       /* Suppression des puces */
+}
+
+.menu a:hover {
+  background-color: #97ebfa;
+  color: #8f3380;
+  border-color: #8f3380;
+}
+
+.menu a.actif {    
+  background-color: #000 ; 
+  color: #1ABC9C ;
+  border-color: #1ABC9C ;
+}
+
+.menu a:hover,
+.menu a:hover.actif{
+  background-color: #97ebfa;
+  color: #8f3380;
+  border-color: #8f3380;
+}
+.menu a {
+  display:block;                /* Transformation en block */
+  min-width: 120px;             /* Largeur minimale des liens */   
+  
+  margin: 0.5rem;               /* Marges externes (1 valeurs = 4 directions) */
+  padding: 0.4rem 0;            /* Marges internes (2 valeurs = haut/bas et gauche/droite)*/
+  text-align: center;           /* Centrage du texte */   
+  background-color: #46a6cc;    /* Couleur d'arrière-plan */
+  color: #fff;                  /* Couleur du texte */
+  text-decoration: none;        /* Suppression du soulignement */
+  border: 1px solid #36607c;       /* Ajout d'une bordure */
+  border-radius: 4px;           /* Arrondis des bordures */
+
+  transition: all 1s ;          /* Ajout des effets de transition */
+}
+
+
 body
 {
   background: linear-gradient(blue, pink);
@@ -14,11 +60,7 @@ h1#header
   height: 258px ;
 }
 
-li
-{
-color: #000;
 
-}
 
 table, caption, th, td {
     /* Nous permet de faire un tableau violet */
@@ -57,6 +99,8 @@ form {
     margin-top: 1em;
   }
   
+  /* Modifcation du formulaire */
+
   label {
     /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
     display: inline-block;
