@@ -1,5 +1,5 @@
 # save this as app.py
-from flask import Flask, request, url_for, redirect, render_template, flash
+from flask import Flask, request, url_for, redirect, render_template, flash, jsonify, session
 
 app = Flask(__name__)
 app.secret_key = 'username:password'
@@ -14,7 +14,9 @@ def login():
         username = request.form['username']
         password = request.form['password']
         if username == 'Napoleon' and password == 'Bonapart':
+            session['key']="Napoleon"
             return render_template('home.html', login=username)
+            
         else:
             flash('Nom d\'utilisateur ou mot de passe incorrect, rentrez Napoleon / Bonapart')
             return render_template('login.html')
@@ -39,6 +41,8 @@ def alias_form():
 
         # redirect to end the POST handling
         # the redirect can be to the same route or somewhere else
+        aliases = {'alias1': 'email1@mail.com', 'alias2': 'email2@mail.com'}  
+       
         return redirect(url_for('alias'))
 
     # show the form, it wasn't submitted
@@ -91,6 +95,7 @@ def regle_nat_form():
 
 @app.route('/logout')
 def logout():
+    session.pop('key', None)
     return render_template('login.html')
 
 if __name__ == "__main__":
