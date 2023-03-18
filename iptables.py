@@ -34,15 +34,21 @@ def home_form():
     # show the form, it wasn't submitted
     return render_template('home.html')
 
+@app.route('/alias_JSON', methods=['GET', 'POST'])
+def alias_JSON():
+    data1 = { 
+    '1' : {'ip1': '10.0.0.2', 'port1' : "22", 'server1': 'Webserver1'},  
+    '2' : {'ip2': '10.0.0.3', 'port2' : "22", 'server2': 'Webserver1'},  
+    }
+    return jsonify(data1)
+
 @app.route('/alias_form', methods=['GET', 'POST'])
-def alias_form():
+def alias_form():  
     if request.method == 'POST':
         # do stuff when the form is submitted
 
         # redirect to end the POST handling
         # the redirect can be to the same route or somewhere else
-        aliases = {'alias1': 'email1@mail.com', 'alias2': 'email2@mail.com'}  
-       
         return redirect(url_for('alias'))
 
     # show the form, it wasn't submitted

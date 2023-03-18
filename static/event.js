@@ -15,3 +15,11 @@ function showTextalias(id) {
     id.innerHTML="L'Alias est blblalbalbalba";
     
 }
+
+function updateAlias() {
+    $.getJSON('/alias_JSON', function(alias_JSON) {
+        console.log(alias_JSON)
+    });
+  }
+
+setInterval(updateAlias, 60000);

@@ -1,5 +1,12 @@
 li {
-  color: black;
+  display: inline-block; 
+  margin-right: 10px;
+  color: #c50000;
+}
+
+p{
+  
+
 }
 
 .menu {
