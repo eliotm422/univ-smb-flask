@@ -1,5 +1,5 @@
 # save this as app.py
-from flask import Flask, request, url_for, redirect, render_template
+from flask import Flask, request, url_for, redirect, render_template, flash
 
 app = Flask(__name__)
 app.secret_key = 'username:password'
@@ -16,7 +16,9 @@ def login():
         if username == 'Napoleon' and password == 'Bonapart':
             return render_template('home.html', login=username)
         else:
-            return render_template('login.html', error='Invalid username or password')
+            flash('Nom d\'utilisateur ou mot de passe incorrect, rentrez Napoleon / Bonapart')
+            return render_template('login.html')
+            
 
 @app.route('/home_form', methods=['GET', 'POST'])
 def home_form():

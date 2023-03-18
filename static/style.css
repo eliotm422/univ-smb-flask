@@ -1,3 +1,7 @@
+li {
+  color: black;
+}
+
 .menu {
   display: flex;              /* Transformation en flexbox */
   padding:0;                  /* Suppression des marges internes */
@@ -17,7 +21,7 @@
 
 .menu a.actif {    
   background-color: #000 ; 
-  color: #1ABC9C ;
+  color: #411081 ;
   border-color: #1ABC9C ;
 }
 
@@ -119,6 +123,8 @@ form {
   
     /* Pour harmoniser le look & feel des bordures des champs texte */
     border: 1px solid #999;
+
+    background-color: rgb(230, 230, 230)
   }
   
   input:focus, textarea:focus {
